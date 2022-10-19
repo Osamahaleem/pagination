@@ -65,15 +65,16 @@ $res = mysqli_query($con,$sql);
     $class="";
     //for active class
    if($current_page == $i){
-    $class='active';
-   }
-    
     ?>
-   <li><a class="page-link" <?php echo $class;?> href="?start=<?php echo $i;?>"><?php echo $i;?></a></li>
-   <?php } ?>
-   
-    
-    
+    <li><a class="page-link active" <?php echo $class;?> href="javascript:void(0)"><?php echo $i;?></a></li>
+    <?php
+   }
+   else{
+   ?>
+  <li><a class="page-link" <?php echo $class;?> href="?start=<?php echo $i;?>"><?php echo $i;?></a></li>
+   <?php 
+  } } 
+?>   
   </ul>
 </nav>
 </body>
