@@ -13,21 +13,15 @@ if(isset($_GET['start'])){
     $current_page = $start;
     $start--;
     $start = $start*$per_page;
-    }
-     
+    }     
    }
 $record = mysqli_num_rows(mysqli_query($con,"select * from pages"));
 $page = ceil($record/$per_page);
 if($start<$page){
-
 }
-
 $sql = "select * from pages limit $start, $per_page";
 $res = mysqli_query($con,$sql);
-
-
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,7 +35,6 @@ $res = mysqli_query($con,$sql);
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
 </head>
 <body>
-
 <section class="col-lg-12">
    <?php
    if(mysqli_num_rows($res)>0){
@@ -52,14 +45,12 @@ $res = mysqli_query($con,$sql);
     <?php
    }} else {
     echo "<h3>No Record Found</h3>";
-   }?>
-   
+   }?> 
 </section>
 
 <nav aria-label="...">
   <ul class="pagination">
-  <?php 
-  
+  <?php  
   // for print no of pages
   for($i=1;$i<=$page;$i++){ 
     $class="";
