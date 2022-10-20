@@ -47,7 +47,6 @@ $res = mysqli_query($con,$sql);
     echo "<h3>No Record Found</h3>";
    }?> 
 </section>
-
 <nav aria-label="...">
   <ul class="pagination">
   <?php  
